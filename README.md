@@ -1,5 +1,3 @@
-![Screenshot](https://res.cloudinary.com/turnup/image/upload/v1526512881/homepage-cards.png)
-
 # First Node Website Tutorial
 
 These repo contains the finished code for the tutorial on building a simple Node.js website with Express and Pug.
@@ -14,7 +12,7 @@ You can [access the tutorial here](https://freshman.tech/learn-node).
 
 ## Usage
 1. Run `npm start`
-2. Navigate to `localhost:7000`
+2. Navigate to `localhost:80`
 
 ## Getting Help
 
