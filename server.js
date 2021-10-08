@@ -23,6 +23,10 @@ app.get("/profile", (req, res) => {
   });
 });
 
+app.get("/health", (req, res) => {
+  res.status(200).json({status:'OK'});
+});
+
 const server = app.listen(8080, () => {
   console.log(`Express running → PORT ${server.address().port}`);
 });
