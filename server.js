@@ -3,6 +3,8 @@ const people = require("./people.json");
 
 const app = express();
 
+var healthCheckRespCode = 200;
+
 app.set("view engine", "pug");
 
 // serve static files from the `public` folder
@@ -24,7 +26,18 @@ app.get("/profile", (req, res) => {
 });
 
 app.get("/health", (req, res) => {
-  res.status(200).json({status:'OK'});
+  let body = { status: 'UP' };
+
+  if (healthCheckRespCode == 500) {
+    body.status = 'DOWN';
+  }
+
+  res.status(healthCheckRespCode).json(body);
+});
+
+app.get("/health/:status", (req, res) => {
+  healthCheckRespCode = req.params.status;
+  res.status(200).send('');
 });
 
 const server = app.listen(8080, () => {
