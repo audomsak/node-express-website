@@ -8,5 +8,6 @@ RUN addgroup -g 1001 appuser \
     
 WORKDIR /usr/src/app
 USER 1001
-RUN ["npm", "install"]
+RUN npm install \
+    && chown -R appuser:appuser /.npm
 ENTRYPOINT ["npm", "start"]
